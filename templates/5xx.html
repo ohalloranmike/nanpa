@@ -1,0 +1,8 @@
+{% extends "base_template.html" %}
+{% block content %}
+<h2><font color="darkblue">5xx Code List</font></h2>
+
+{% for item in list5xx %}
+    <b>{{item[0]}}-{{item[1]}}</b>&nbsp&nbsp{{item[2:]}}<br>
+{% endfor %}
+{% endblock content %}

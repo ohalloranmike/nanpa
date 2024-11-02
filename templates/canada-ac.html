@@ -1,0 +1,24 @@
+{% extends "base_template.html" %}
+{% block content %}
+<h2><font color="darkblue">AreaCode:  {{npa_code}}</font></h2>
+<h2><font color="darkblue">{{ac_return['LOCATION']}}</font></h2>
+{% for key, value in ac_return.items() %}
+      {{key}}:&nbsp&nbsp
+      <b>{{value}}</b><br>
+{% endfor %}
+<br><br>
+
+<h2> <font color="darkblue">OfficeCodes within AreaCode:&nbsp'{{npa_code}}'</font></h2>
+
+{% for key, value in ac_oc_dict.items() %}
+      <h3> <font color="darkblue">{{key}}:</font></h3>
+      {% for item in value %}
+          <a href="{{LinkHome}}/officecodes?npa-nxx={{npa_code}}-{{item}}">{{item}}&nbsp</a>
+      {% endfor %}
+{% endfor %}
+<br><br>
+
+<img src="{{myurl}}{{CanadaFilePath}}{{mapfile}}"></img><br>
+<img src="{{myurl}}{{CanadaFilePath}}canada.png"></img><br>
+<img src="{{myurl}}{{CanadaFilePath}}canadapt.png"></img><br>
+{% endblock content %}

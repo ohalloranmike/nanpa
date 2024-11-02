@@ -1,0 +1,12 @@
+{% extends "base_template.html" %}
+{% block content %}
+<h2><font color="darkblue">{{state}}</font></h2>
+<h3><font color="darkblue">AreaCodes for {{state}} are:</font></h3>
+(
+{% for item in StateACs %}
+    <a href="{{LinkHome}}/areacodes?npa={{item}}">{{item}}&nbsp</a>
+{% endfor %}
+)<br><br>
+
+<img src="{{myurl}}{{CountryFilePath}}{{mapfile}}"></img><br>
+{% endblock content %}

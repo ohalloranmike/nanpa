@@ -1,0 +1,8 @@
+{% extends "base_template.html" %}
+{% block content %}
+<h2><font color="darkblue">Feature Group D CIC Codes</font></h2>
+<h2><font color="darkblue">Results for:&nbsp&nbsp'{{cic_code}}'</font></h2>
+{% for key, value in cicr.items() %}
+    {{key}}:&nbsp&nbsp<b>{{value}}</b><br>
+{% endfor %}
+{% endblock content %}

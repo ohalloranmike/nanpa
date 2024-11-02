@@ -1,0 +1,7 @@
+{% extends "base_template.html" %}
+{% block content %}
+<h2><font color="darkblue">N11 Code List</font></h2>
+{% for item in all_n11_codes %}
+    {{item}}<br>
+{% endfor %}
+{% endblock content %}

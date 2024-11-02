@@ -1,0 +1,11 @@
+{% extends "base_template.html" %}
+{% block content %}
+<h2><font color="darkblue">Feature Group B CIC Code List</font></h2>
+<br>
+<u><b></br>CIC, ACNA, 'Entity, 'Assgnmt Dt<br></u>
+        &nbsp&nbsp<u>'Contact, 'Phone, 'Street, 'City, 'State, 'Zip'</b></u>
+<br><br>
+{% for item in FGBCICCodes[1:] %}
+        <b>{{item[0]}}</b>,&nbsp{{item[1]}},&nbsp'{{item[2]}},&nbsp'{{item[3]}}<br>&nbsp&nbsp'{{item[4]}},&nbsp'{{item[5]}},&nbsp'{{item[6]}},&nbsp'{{item[7]}},&nbsp'{{item[8]}},&nbsp'{{item[9]}}'<br>
+{% endfor %}
+{% endblock content %}

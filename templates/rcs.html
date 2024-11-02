@@ -1,0 +1,9 @@
+{% extends "base_template.html" %}
+{% block content %}
+<font color="darkblue" size="5">RateCenters&nbsp within state:&nbsp'<b>{{state}}'</b></font>
+<br><br>
+<h3><font color="darkblue>">Sorted by RateCenter</font></h3>
+{% for item in rcs_list %}
+        <a href="{{LinkHome}}/ratecenter?rc={{item}}&state={{state}}&country=US">{{item}}</a><br>
+{% endfor %}
+{% endblock content %}
