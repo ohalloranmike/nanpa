@@ -682,7 +682,7 @@ def ocn():
                 row = cur.fetchone()
 
             cur.execute("select NPANXX, RateCenter, State from oc where OCN='" + ocn +
-                        "' order by RateCenter, NPANXX")
+                        "' order by State, RateCenter, NPANXX")
             row = cur.fetchone()
             while row:
                 ac_oc_rclist.append(row)
