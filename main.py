@@ -306,13 +306,13 @@ cur.execute('CREATE TABLE caoc (' + caoc_fixed_headers[0] + ' text, ' +
             caoc_fixed_headers[1] + ' text, ' + caoc_fixed_headers[2] + ' text, ' +
             caoc_fixed_headers[3] + ' text, ' + caoc_fixed_headers[4] + ' text, ' +
             caoc_fixed_headers[5] + ' text, ' + caoc_fixed_headers[6] + ' text, ' +
-            caoc_fixed_headers[7] + ' text);')
+            caoc_fixed_headers[7] + ' text, ' + caoc_fixed_headers[8] + ' text);')
 caac_oc.pop(0)
 caac_oc.pop(0)
 caac_oc = [[item.replace("'", '') for item in row] for row in caac_oc]
 caac_oc = [[item.replace('"', '') for item in row] for row in caac_oc]
 caac_oc = [[item.strip() for item in row] for row in caac_oc]
-cur.executemany("insert into caoc values(?,?,?,?,?,?,?,?)", caac_oc)
+cur.executemany("insert into caoc values(?,?,?,?,?,?,?,?,?)", caac_oc)
 conn.commit()
 CAOCs.close()
 
