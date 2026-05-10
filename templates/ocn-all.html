@@ -1,0 +1,12 @@
+{% extends "base_template.html" %}
+{% block content %}
+<font color="darkblue" size="5">List of all Operating Companies in the US</font>
+
+<br><br>
+<h3><font color="darkblue>">Sorted by Company</font></h3>
+
+{% for item in ocnall_list %}
+      <a href="{{LinkHome}}/company?ocn={{item[1]}}&companyname={{item[0]}}&state={{item[2]}}&country=US">{{item[0]}}</b></a>, {{item[1]}}, {{item[2]}}<br>
+{% endfor %}
+
+{% endblock content %}

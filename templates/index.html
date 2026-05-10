@@ -1,0 +1,167 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+<h2><font color="darkblue">Search
+</font>
+</h2>
+<font color="darkblue">AreaCode
+</font>
+<br>
+<form action="/areacodes?npa=">
+    <input type="text" name="npa" maxlength=3 placeholder="" size="3">
+    <input type="submit" value="Submit">
+</form>
+<br>
+<font color="darkblue">AreaCode-OfficeCode
+</font>
+<br>
+<form action="/officecodes?npa-nxx=">
+    <input type="text" name="npa-nxx" maxlength=7 placeholder="" size="7">
+    <input type="submit" value="Submit">
+</form>
+<br><br>
+
+<h2><font color="darkblue">Area Codes, Rate Centers, and Operating Companies
+</font>
+</h2>
+
+<h3><font color="black">US States:
+</font>
+</h3>
+<form name="state" action="/acmaps?state=">
+    <font size="3">(<b>AreaCodes)</b> by State
+    </font>
+    <br>
+    <select name="state">
+        {% for key, value in States.items() %}
+            <option value={{key}}>{{value}}: {{key}}
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Submit">
+</form>
+<br>
+<form name="staterc" action="/rcstate?rcs=">
+    <font size="3">(<b>RateCenters)</b> by State
+    </font>
+    <br>
+    <select name="rcs">
+        {% for key, value in States.items() %}
+            <option value={{key}}>{{value}}: {{key}}
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Submit">
+</form>
+<br>
+<form name="statecomp" action="/compstate?cs=">
+    <font size="3">(<b>Operating Companies)</b> by State
+    </font>
+    <br>
+    <select name="cs">
+        {% for key, value in States.items() %}
+            <option value={{key}}>{{value}}: {{key}}
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Submit">
+</form>
+<br><br>
+
+<h3><font color="black">US Territory:
+</font>
+</h3>
+<form name="state" action="/acmaps?state=">
+    <font size="3">(<b>AreaCodes)</b> by US Territory
+    </font>
+    <br>
+    <select name="state">
+        {% for key, value in USTerritory.items() %}
+            <option value={{key}}>{{value}}: {{key}}
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Submit">
+</form>
+<br>
+<form name="staterc" action="/rcstate?rcs=">
+    <font size="3">(<b>RateCenters)</b> by US Territory
+    </font>
+    <br>
+    <select name="rcs">
+        {% for key, value in USTerritory.items() %}
+            <option value={{key}}>{{value}}: {{key}}
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Submit">
+</form>
+<br>
+<form name="statecomp" action="/compstate?cs=">
+    <font size="3">(<b>Operating Companies)</b> by US Territory
+    </font>
+    <br>
+    <select name="cs">
+        {% for key, value in USTerritory.items() %}
+            <option value={{key}}>{{value}}: {{key}}
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Submit">
+</form>
+<br><br>
+
+<h3><font color="black">Canada Province/Territory:
+</font>
+</h3>
+<form name="state" action="/acmaps?state=">
+    <font size="3">(<b>AreaCodes)</b> by Canadian Provice/Territory
+    </font>
+    <br>
+    <select name="state">
+        {% for key, value in CanadaPT.items() %}
+            <option value="{{key}}">{{value}}: {{key}}
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Submit">
+</form>
+<br><br>
+
+<h3><font color="black">Countries:
+</font>
+</h3>
+{% for key, value in Country.items() %}
+    <a href="{{LinkACMaps}}{{key}}">{{value}}</a>: {{value}}
+<br>
+{% endfor %}
+
+<br>
+<h2><font color="darkblue">Lists
+</font>
+</h2>
+<a href="{{LinkHome}}/aclist">All AreaCodes sorted by NPA</a>
+<br><br>
+<a href="{{LinkHome}}/ocnall">US Operating Companies sorted by Company</a>
+<br><br>
+<font color="darkblue"><b>Find:</b> US Operating Company using OCN#
+</font>
+<br>
+<form action="/ocn?ocn=">
+    <input type="text" name="ocn" maxlength=4 placeholder="" size="4">
+    <input type="submit" value="Submit">
+</form>
+
+<br>
+<font color="darkblue"><b><i>*Work needs done on processing the results from the links below...</i></b>
+</font>
+<br>
+<a href="{{LinkHome}}/canadaocnall?sort=company">Operating Companies in Canada &nbsp(sorted by Company)</a>
+<br>
+<a href="{{LinkHome}}/canadaocnall?sort=ocn">Operating Companies in Canada &nbsp(sorted by OCN)</a>
+<br>
+<a href="{{LinkHome}}/canadaexall?sort=npa">Exchange Areas in Canada &nbsp(sorted by Exchange Area / NPA)</a>
+<br>
+<a href="{{LinkHome}}/canadaexall?sort=company">Exchange Areas in Canada &nbsp(sorted by Exchange Area / Company)</a>
+
+{% endblock content %}

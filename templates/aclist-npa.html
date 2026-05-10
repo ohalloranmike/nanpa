@@ -1,0 +1,30 @@
+{% extends "base_template.html" %}
+{% block content %}
+<h2><font color="darkblue">AreaCode List</font></h2>
+<h2><font color="darkblue">Asigned</font></h2>
+{% for item in ac_list_assigned %}
+    <a href="{{myurl}}/areacodes?npa={{item["NPA_ID"]}}">{{item["NPA_ID"]}}&nbsp&nbsp</a>
+    {% for key, value in item.items() %}
+    {{key}}: <b>{{value}}</b>
+    {% endfor %}
+<br>
+{% endfor %}
+<br><br>
+<h2><font color="red">Reserved</font></h2>
+{% for item in ac_list_reserved %}
+    <a href="{{myurl}}/areacodes?npa={{item["NPA_ID"]}}">{{item["NPA_ID"]}}&nbsp&nbsp</a>
+   {% for key, value in item.items() %}
+    {{key}}: <b>{{value}}</b>
+    {% endfor %}
+<br>
+{% endfor %}
+<br><br>
+<h2><font color="red">Unassigned and Not Reserved</font></h2>
+{% for item in ac_list_unassigned %}
+    <a href="{{myurl}}/areacodes?npa={{item["NPA_ID"]}}">{{item["NPA_ID"]}}&nbsp&nbsp</a>
+   {% for key, value in item.items() %}
+    {{key}}: <b>{{value}}</b>
+    {% endfor %}
+<br>
+{% endfor %}
+{% endblock content %}

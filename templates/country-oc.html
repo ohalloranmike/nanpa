@@ -1,0 +1,18 @@
+{% extends "base_template.html" %}
+{% block content %}
+<h2><font color="darkblue">OfficeCode:  {{npanxx}}</font></h2>
+<h2><font color="darkblue">{{state_name}}</font></h2>
+<h3><font color="darkblue">NPA-NXX info:&nbsp{{npanxx}}</font></h3>
+{% for key, value in acoc_return.items() %}
+      {{key}}:&nbsp&nbsp
+      <b>{{value}}</b><br>
+{% endfor %}
+<br><br>
+<h3><font color="darkblue">NPA info:&nbsp{{npa_code}}</font></h3>
+{% for key, value in ac_return.items() %}
+      {{key}}:&nbsp&nbsp
+      <b>{{value}}</b><br>
+{% endfor %}
+<br><br>
+<img src="{{myurl}}{{CountryFilePath}}{{mapfile}}"></img><br>
+{% endblock content %}

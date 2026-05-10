@@ -1,0 +1,9 @@
+{% extends "base_template.html" %}
+{% block content %}
+<font color="darkblue" size="5">Operating Companies&nbsp within state:&nbsp'<b>{{state}}'</b></font>
+<br><br>
+<h3><font color="darkblue>">Sorted by Operating Company</font></h3>
+{% for item in cs_list %}
+        <a href="{{LinkHome}}/company?ocn={{item[0]}}&companyname={{item[1]}}&state={{state}}&country=US">{{item}}</a><br>
+{% endfor %}
+{% endblock content %}

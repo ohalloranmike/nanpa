@@ -1,0 +1,19 @@
+{% extends "base_template.html" %}
+{% block content %}
+<font color="darkblue" size="5">OfficeCodes assigned to:<br><br>
+        Operating Company:&nbsp<b>{{companyname}}</b><br>
+                OCN:&nbsp<b>{{ocn}}</b><br>
+        Within state:&nbsp'<b>{{state}}'</b></font>
+
+<br><br>
+<h3><font color="darkblue>">Sorted by NPANXX</font></h3>
+{% for item in ac_oc_list %}
+        <a href="{{LinkHome}}/officecodes?npa-nxx={{item[0]}}">{{item}}</a><br>
+{% endfor %}
+<br><br>
+<h3><font color="darkblue>">Sorted by RateCenter</font></h3>
+{% for item in ac_oc_rclist %}
+        <a href="{{LinkHome}}/officecodes?npa-nxx={{item[0]}}">{{item}}</a><br>
+{% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "base_template.html" %}
+{% block content %}
+<font color="darkblue" size="5">OfficeCodes in RateCenter:&nbsp'<b>{{RateCenter}}</b>
+        '&nbsp within Province:&nbsp'<b>{{state}}'</b></font>
+<br><br>
+<h3><font color="darkblue>">Sorted by NPANXX</font></h3>
+{% for item in ac_oc_list %}
+        <a href="{{LinkHome}}/officecodes?npa-nxx={{item[0]}}-{{item[1]}}">{{item}}</a><br>
+{% endfor %}
+<br><br>
+<h3><font color="darkblue>">Sorted by Company</font></h3>
+{% for item in ac_oc_companylist %}
+        <a href="{{LinkHome}}/officecodes?npa-nxx={{item[0]}}-{{item[1]}}">{{item}}</a><br>
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% extends "base_template.html" %}
+{% block content %}
+<h2><font color="darkblue">900 Code List</font></h2>
+<br>
+<b><u>900-NXX</u>,&nbsp<u>Entity</u>,&nbsp<u>'OCC'</u></b>
+<br><br>
+{% for item in codes900 %}
+<b>900-{{item[0]}}</b>,&nbsp{{item[1]}},&nbsp({{item[2]}})<br>
+{% endfor %}
+{% endblock content %}
