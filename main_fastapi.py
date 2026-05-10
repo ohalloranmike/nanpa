@@ -11,7 +11,6 @@ from fastapi.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 import uvicorn
 
-
 ac_headers = []
 ac_oc = []
 caac_oc = []
